@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCISE 05</title>
+</head>
+<body>
+    <script>
+
+        class TV {
+            constructor( fabricante = null, polegadas = 0, ligada = false, canal = 0, volume =0,) {
+                this.#fabricante = fabricante;
+                this.#polegadas = polegadas;
+                this.#ligada = ligada; 
+                this.#canal = canal;
+                this.#volume = volume;
+            }
+
+            #canal
+            #volume
+            #ligada
+            #fabricante 
+            #polegadas
+
+            ligar() {
+                this.#ligada = true
+                return "A tv foi ligada.";
+            }
+            
+            desligar() {
+                this.#ligada = false
+                return "A tv foi desligada.";
+            }
+
+            mudarcanal(numero = this.#canal) {
+                if(this.#ligada){
+                    return "O canal foi alterado para: " + (this.#canal = numero);
+                } else {
+                    return "Não foi possível alterar o canal. A tv está desligada.";
+                }
+            }
+            
+            aumentarvolume() {
+                if(this.#ligada) {
+                    return "O volume foi aumentado. " + (this.#volume += 1);
+                } else {
+                    return "Não foi possível executar. A tv está desligada.";
+                }
+            }
+            
+            diminuirvolume() {
+                if(this.#ligada) {
+                    return "O volume foi reduzido. " + (this.#volume -= 1);
+                } else {
+                    return "Não foi possível alterar o volume. A tv está desligada.";
+                }
+            }
+
+            info() {
+                return `Sua tv está ${(this.#ligada) ? "ligada." : "desligada."}`;
+            }
+            
+        }
+
+        const samsung = new TV ("samsung", 42, false, 5, 8);
+
+        const aoc = new TV ("aoc", 32, false, 13, 8);
+
+       
+        console.log(aoc);
+        console.log(aoc.ligar());
+        console.log(aoc.mudarcanal(7));
+        console.log(aoc.mudarcanal(5));
+        console.log(aoc.aumentarvolume());
+        console.log(aoc.info());
+        console.log(aoc.desligar());
+        console.log(aoc.info());
+
+            
+
+
+
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
